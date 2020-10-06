@@ -1,13 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="bg" lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Electronic Music Genre Survey</title>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani&display=swap" rel="stylesheet" type="text/css">
+<style>
+ body {
+   font-family: Rajdhani, sans-serif;
+   text-align: left;
+   margin-left: 30%;
+   margin-right: 30%;
+   max-width: 800px;
+ }
+ #title {
+   font-size: 60px;
+   font-family: Rajdhani, sans-serif;
+   text-align: center;
+   color: rgba(242, 247, 242);
+   margin-top: 40px;
+   background-color: black;
+   margin-left: -5%;
+   margin-right: -5%;
+ }
+ html {
+   height: 100%;
+   margin: 0;
+   background-color: black;
+   color: white;
+ }
+ .bg {
+   background-image: url("https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80");
+   background-repeat: no-repeat;
+   background-position: center;
+   height: 100%;
+   background-size: cover;
+   opacity: 95%;
+ }
+ .transparentbox {
+   background: black;
+   margin-left: -5%;
+   margin-right: -5%;
+   height: 97vh;
+   opacity: 96%;
+   padding: 10px 30px 20px 30px;
+ }
+ form {
+   font-size: 20px;
+   box-sizing: border-box;
+ }
+</style>
 </head>
-<body>
-  
-</body>
+<main id="main">
+  <body>
+    <h1 id="title">
+      Electronic Music Genre Survey
+    </h1>
+    <form id="survey-form" class="transparentbox">
+      <p id="description">
+        Tell us about your favorite genre of electronic music
+      </p>
+      <label id="name-label" for="name">Name </label><br>
+      <input type="text" name="name" id="name" required placeholder="first name"><br>
+      <label id="email-label"for="email">Email </label><br>
+      <input type="email" name="email" id="email" required placeholder="preffered contact"><br>
+      <label id="number-label" for="age">Age (optional) </label><br>
+      <input type="number" name="age" id="number" min="12" max="99" required placeholder="12+ only"><br>
+      <label id="dropdown-label" for="dropdown">EDM listening hours per week </label><br>
+      <select name="dropdown" id="dropdown" required><br>
+        <option value="0-5">0-5</option>
+        <option value="6-10">6-10</option>
+        <option value="11-15">11-15</option>
+        <option value="16-20">16-20</option>
+        <option value="20+">20+</option>
+      </select><br>
+    <p>Is EDM your favorite type of music?</p>
+      <input type="radio" id="radio-yes" name="yes/no/unsure" value="yes">
+      <label class="radiobuttons" for="yes">Yes</label><br>  
+      <input type="radio" id="radio-no" name="yes/no/unsure" value="no">
+      <label class="radiobuttons" for="no">No</label><br>  
+      <input type="radio" id="radio-not-sure" name="yes/no/unsure" value="not-sure">
+      <label class="radiobuttons" for="not-sure">Not sure</label><br> 
+      <p>Which of these genres do you regularly listen to? (tick multiple)</p>
+      <input type="checkbox" name="genre1" value="trance">
+      <label for="genre1">Trance</label><br>
+      <input type="checkbox" name="genre2" value="house">
+      <label for="genre2">House</label><br>
+      <input type="checkbox" name="genre3" value="Drum-and-bass">
+      <label for="genre3">Drum and Bass</label><br>
+      <input type="checkbox" name="genre4" value="Techno">
+      <label for="genre4">Techno</label><br>
+      <input type="checkbox" name="genre5" value="Hardstyle">
+      <label for="genre5">Hardstyle</label><br>
+      <input type="checkbox" name="genre5" value="garage">
+      <label for="genre6">Trap/Garage</label><br>
+      <input type="checkbox" name="genre7" value="other">
+      <label for="genre7">Other</label><br>
+      <br>
+      <textarea placeholder="Additional comments"></textarea><br>
+      <input type="submit" id="submit">
+    </form>
+    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  </body>
+</main>
 </html>
 
-test1
