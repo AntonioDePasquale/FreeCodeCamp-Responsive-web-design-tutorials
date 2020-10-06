@@ -1,3 +1,3 @@
 # Reckful_tribute_site
 
-whats up dude.
+A tribute site dedicated to Byron Bernstein aka Reckful for FreeCodeCamp's tribute page challenge.
