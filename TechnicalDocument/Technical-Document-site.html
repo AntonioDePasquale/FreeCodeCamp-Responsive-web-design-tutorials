@@ -4,8 +4,256 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+
+<style>
+  *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      list-style: none;
+      text-decoration: none;
+      font-family: "Montserrat", serif;
+}  
+body {
+    background-color: white;
+}
+.wrapper {
+    display: flex;
+    position: relative; 
+}
+.navbar {
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background-color: rgb(62, 87, 107);
+    padding: 10px 0;
+}
+.navbar:hover{
+   overflow-y: scroll;
+}
+#title {
+    color: #fff;
+    text-transform: uppercase;
+    text-align: left;
+    font-size: 28px;
+    margin-left: 20px;
+}
+#logo {
+    height: 30px;
+}
+header {
+    font-weight: 500;
+    padding: 0.8em 0;
+    font-size: 28px;
+}
+li {
+    padding: 8px 20px;
+    color: #fff;
+    font-size: 18px;
+    border-bottom: 1px solid rgba(0,0,0,0.05);
+    border-top: 1px solid grey;
+    height: 3.4em;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    margin-right: 40px;
+}
+
+ul li a {
+    transition: all 0.3s ease 0;
+    color: ivory;
+}
+ul li a:hover {
+    color: rgb(231, 145, 33);
+}
+main {
+    margin: 50px 10% 50px 310px;
+}
+figure {
+    padding: 50px 0;
+    align-items: center;
+    text-align: center;
+    font-style: italic;
+}
+p {
+    margin-left: 20px
+}
+@media only screen and (max-width: 1024px) {
+    * {
+        font-size: 98%;
+    }
+    .responsive {
+        max-width: 80%;
+    }
+}
+</style>
 </head>
 <body>
+
+<div class="wrapper">
+    <nav class="navbar" id="navbar">
+        <header>
+            <h1 id="title">How does the internet work?</h1>
+        </header>
+            <ul>
+                <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+                <li><a class="nav-link" href="#Internet_Addresses">Internet Addresses</a></li>
+                <li><a class="nav-link" href="#Protocol_Stacks_and_Packets">Protocol Stacks and Packets</a></li>
+                <li><a class="nav-link" href="#Networking_Infrastructure">Networking Infrastructure</a></li>
+                <li><a class="nav-link" href="#Internet_Infrastructure">Internet Infrastructure</a></li>
+                <li><a class="nav-link" href="#The_internet_Routing_Hierarchy">The internet Routing Hierarchy</a></li>
+                <li><a class="nav-link" href="#Domain_Names_and_Address_Resolution">Domain Names and Address Resolution</a></li>
+                <li><a class="nav-link" href="#Internet_Protocols_revisited">Internet Protocols revisited</a></li>
+                <li><a href="#Application_Protocols:_HTTP_and_the_Web">Application Protocols: HTTP and the Web</a></li>
+                <li><a href="#Application_protocols_SMTP_and_Email">Application protocols: SMTP and Email</a></li>
+                <li><a href="#header11">Internet Protocol</a></li>
+                <li><a href="#header12">Wrap Up</a></li>
+                <li><a href="#header13">Resources</a></li>
+                <li><a href="#header14">Bibiliography</a></li>
+            </ul>
+    </nav>
+</div>
+
+<main id="main-doc" >
+    <section class="main-section" id="Introduction">
+        <header>Introduction</header>
+        <p>
+            How does the Internet work? Good question! The Internet's growth has become explosive and it seems impossible to escape the bombardment of www.com's seen constantly on television, heard on radio, and seen in magazines. Because the Internet has become such a large part of our lives, a good understanding is needed to use this new tool most effectively.    
+        </p>
+    </section>
+
+    <section class="main-section" id="Internet_Addresses">
+        <header>Internet Addresses</header>
+        <p>
+            Because the Internet is a global network of computers each computer connected to the Internet must have a unique address. Internet addresses are in the form nnn.nnn.nnn.nnn where nnn must be a number from 0 - 255. This address is known as an IP address. (IP stands for Internet Protocol; more on this later.)
+        </p>
+        <figure>
+            <img src="http://www.theshulers.com/whitepapers/internet_whitepaper/images/ruswp_diag1.gif" alt="Illustration of two computers connecting to the internet"></img>
+            <figcaption>
+                "your computer with IP address 1.2.3.4 and another computer with IP address 5.6.7.8.<br> The Internet is represented as an abstract object in-between"
+            </figcaption>
+        </figure>
+        <p>
+            If you connect to the Internet through an Internet Service Provider (ISP), you are usually assigned a temporary IP address for the duration of your dial-in session. If you connect to the Internet from a local area network (LAN) your computer might have a permanent IP address or it might obtain a temporary one from a DHCP (Dynamic Host Configuration Protocol) server. In any case, if you are connected to the Internet, your computer has a unique IP address.   
+        </p>
+    </section>
+
+    <section class="main-section" id="Protocol_Stacks_and_Packets">
+        <header>Protocol Stacks and Packets</header>
+        <p>
+            So your computer is connected to the Internet and has a unique address. How does it 'talk' to other computers connected to the Internet? An example should serve here: Let's say your IP address is 1.2.3.4 and you want to send a message to the computer 5.6.7.8. The message you want to send is "Hello computer 5.6.7.8!". Obviously, the message must be transmitted over whatever kind of wire connects your computer to the Internet. Let's say you've dialed into your ISP from home and the message must be transmitted over the phone line. Therefore the message must be translated from alphabetic text into electronic signals, transmitted over the Internet, then translated back into alphabetic text. How is this accomplished? Through the use of a protocol stack. Every computer needs one to communicate on the Internet and it is usually built into the computer's operating system (i.e. Windows, Unix, etc.). The protocol stack used on the Internet is referred to as the TCP/IP protocol stack because of the two major communication protocols used. The TCP/IP stack looks like this:
+        </p>
+            <figure>
+                <img class="responsive" src="https://docs.oracle.com/cd/E19683-01/806-4075/images/ipov.fig88.epsi.gif" alt="Image showing TCP/IP stack components">
+                <figcaption> 
+                    "Image showing the components of the TCP/IP stack"
+                </figcaption>
+            </figure>
+        <p>
+            The next section will help explain this further.
+        </p>
+    </section>
+
+    <section class="main-section"  id="Networking_Infrastructure">
+        <header>Networking Infrastructure</header>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis dignissimos earum unde, natus minima vitae commodi aliquid saepe illum quam fuga eveniet impedit qui minus autem pariatur non sit velit?
+        </p>
+        <code>
+            x = 5;
+            y = 6;
+            z = x + y;
+        </code>
+        <code>
+            x = 5;
+            y = 6;
+            z = x + y;
+        </code>
+        <code>
+            x = 5;
+            y = 6;
+            z = x + y;
+        </code>
+        <code>
+            x = 5;
+            y = 6;
+            z = x + y;
+        </code>
+        <code>
+            x = 5;
+            y = 6;
+            z = x + y;
+        </code>
+    </section>
+
+    <section class="main-section" id="Internet_Infrastructure">
+        <header>Internet Infrastructure</header>
+        <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Provident praesentium quisquam saepe quaerat eum itaque blanditiis, nesciunt debitis nulla numquam non est inventore natus dolor esse vitae commodi dolores voluptate.
+        </p>
+    <ul>
+        <li>list 1</li>
+        <li>list 2</li>
+        <li>list 3</li>
+        <li>list 4</li>
+        <li>list 5</li>
+    </ul>
+    </section>
+    <section class="main-section" id="The_internet_Routing_Hierarchy">
+        <header>The internet Routing Hierarchy</header>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. A aliquid ab eos optio rerum delectus. Atque, in corrupti ad est beatae accusamus obcaecati deserunt? Ducimus excepturi aliquid accusamus necessitatibus perspiciatis.
+        </p>
+    </section>
+    <section class="main-section" id="Domain_Names_and_Address_Resolution">
+        <header>Domain Names and Address Resolution</header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt doloribus vero non in, nostrum maiores labore maxime cum quia harum voluptates, nisi quos deleniti iste voluptate eos quod. Quos, hic!
+        </p>
+    </section>
+
+    <section class="main-section" id="Internet_Protocols_revisited">
+        <header>Internet Protocols revisited</header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi vel incidunt non consectetur laborum nemo temporibus sunt delectus fuga earum illum possimus, dicta omnis dolore expedita praesentium rem perspiciatis eius?
+        </p>
+    </section>
+
+    </section class="main-section" id="Application_Protocols:_HTTP_and_the_Web">
+        <header>Application Protocols: HTTP and the Web</header>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Cum harum ipsa est. Minima quod, numquam odio ullam totam, aut facilis debitis perspiciatis nobis voluptas voluptatibus! Omnis corporis odio consequuntur odit?
+        </p>
+    </section>
+
+    </section class="main-section" id="Application_protocols_SMTP_and_Email">
+        <header>Application protocols SMTP and Email</header>
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Fugiat adipisci commodi temporibus sunt. Dolorum quibusdam illo nihil dolor asperiores, ipsum laborum eos explicabo est dicta et? Modi quos laborum porro.
+        </p>
+    </section>
+
+        <header id="header11">Internet Protocol</header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt optio perspiciatis mollitia temporibus eos eveniet asperiores facere aliquid nesciunt omnis consequatur natus dolores atque numquam inventore dolorem, error sint. Earum.
+        </p>
+        <header id="header12">Wrap Up</header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas facilis recusandae numquam, officia adipisci nihil non quae, quasi eligendi dicta iste eum dolores ratione nostrum labore ipsa cupiditate magnam ipsam?
+        </p>
+        <header id="header13">Resources</header>
+        <p>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iusto, officiis adipisci natus iste quidem debitis, autem ipsum repellendus a, deleniti rerum minima asperiores ea esse sequi. Recusandae facilis ullam quod.
+        </p>
+        <header id="header14">Bibiliography</header>
+        <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Culpa minus autem numquam ex aspernatur recusandae iusto nemo enim nostrum at? Voluptatum saepe consectetur quod consequuntur est ad odit, sit assumenda.
+        </p>
     
+<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+</main>
+
 </body>
 </html>
