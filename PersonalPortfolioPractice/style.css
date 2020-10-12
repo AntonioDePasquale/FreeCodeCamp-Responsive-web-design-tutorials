@@ -87,11 +87,13 @@ navbar {
     background-image: radial-gradient( #474444, #0c0c0c);
     width: 100%;
     height: 100vh;
+    padding: 5%;
 }
 .welcome-section__title {
     letter-spacing: 0.2em;
     font-size: 3em;
     margin-bottom: 10px;
+    text-align: center;
 }
 .welcome-section__subtitle {
     font-size: 1.5em;
@@ -101,27 +103,29 @@ navbar {
 
 #projects {
     width: 100%;
-    height: 110vh;
+    height: 100%;
     background-image: linear-gradient(45deg, #284063, #5c88af);
+    padding: 5%;
 }
 .projects-title {
     text-align: center;
-    padding: 1.5em;
+    padding-bottom: 1.5em;
     font-size: 3em;
 }
 .projects__container {
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 20px auto;
-    width: 1200px;
-    height: 820px;
+    width: 90%;
+    height: 70%;
     gap: 35px;
 }
 .project-tile {
     display: flex;
     align-items: flex-end;
     letter-spacing: 3px;
+    justify-content: center;
 }
 .project-tile__item {
     text-decoration: none;
@@ -136,8 +140,8 @@ navbar {
     border-color: #161616;
 }
 .project-tile__img {
-    width: 590px;
-    height: 370px;
+    max-width: 100%;
+    height: auto;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -146,18 +150,16 @@ navbar {
     background-position: right;
     background-size: cover;
 }
-.project-tile__item {
-    opacity: 100%;
-}
 .contacts {
     width: 100%;
-    height: 40vh;
+    height: 100%;
     background-image: radial-gradient( #474444, #0c0c0c);
 }
 
 .contacts {
     text-align: center;
     padding: 1.5em;
+    padding-bottom: 5%;
 }
 .contacts__title {
     font-size: 3em;
@@ -190,6 +192,13 @@ navbar {
     text-decoration: none;
     color: rgba(248, 31, 31, 0.692);
 }
+
+@media screen and (max-width:1024px){
+    .contacts__list {
+        width: 80%;
+    }
+}
+
 a:hover {
     color: rgb(70, 172, 172);
 }
